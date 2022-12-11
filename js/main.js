@@ -7,16 +7,10 @@ btnAvice.addEventListener('click', () => {
 });
 
 function getAvice() {
-    axios.get('https://api.adviceslip.com/advice')
-        .then(function (response) {
-            // función que se ejecutará al recibir una respuesta
-            aviceText.innerText = `“${response.data.slip.advice}”`;
+    fetch('https://api.adviceslip.com/advice')
+        .then(response => response.json())    // a fetch le llega una respuesta en string que tiene que ser parseada a JSON
+        .then(data => {
+            aviceText.innerText = `“${data.slip.advice}”`;
         })
-        .catch(function (error) {
-            // función para capturar el error
-            console.log(error);
-        })
-        .then(function () {
-            // función que siempre se ejecuta
-        });
+        .catch(error => console.error(error));
 }
