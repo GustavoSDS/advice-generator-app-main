@@ -37,6 +37,7 @@
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 4px;
+    line-height: 24px;
     font-size: .8rem;
     color: var(--Neon-Green);
     margin-bottom: 25px;
@@ -109,7 +110,7 @@
     .card {
         height: 333px;
         margin: auto;
-        padding: 50px 48hpx 0;
+        padding: 48px 48px 0;
     }
 
     .card__advice {
